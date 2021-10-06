@@ -1,0 +1,17 @@
+{
+  "name": "termicadesignapi",
+  "version": "1.0.0",
+  "description": "", 
+  "keywords": [],
+  "author": "Javier Gonzalez",
+  "license": "ISC",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-sdk": "^2.1001.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "invoke-getWorks": "sls invoke local -f getWorks",
+    "deploy": "sls deploy --stage prod --verbose"
+  }
+}
