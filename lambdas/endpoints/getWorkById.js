@@ -8,18 +8,21 @@ const dynamoDB = new AWS.DynamoDB({
 });
 
 module.exports.handler = (event, context, cb) => {
+  const { id = "1" } = event;
+
   const params = {
     TableName: "TermicaDesignTable",
+    Key: {
+      workId: { S: id },
+    },
   };
 
-  dynamoDB.scan(params, (err, data) => {
+  dynamoDB.getItem(params, (err, data) => {
     if (err) {
       console.log(err);
       cb(err);
     } else {
-      const unmarshalledData = data.Items.map((el) => {
-        return AWS.DynamoDB.Converter.unmarshall(el);
-      });
+      const unmarshalledData = AWS.DynamoDB.Converter.unmarshall(data.Item);
 
       const response = {
         isBase64Encoded: false,
