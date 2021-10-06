@@ -32,16 +32,16 @@ functions:
     events:
       - http:
           method: GET
-          path: /termicadesignapi/get-works
+          path: /termicadesign-api/get-works
   getWorkById:
     handler: lambdas/endpoints/getWorkById.handler
     events:
       - http:
           method: GET
-          path: /termicadesignapi/get-work-by-id/{id} 
+          path: /termicadesign-api/get-work-by-id/{id} 
   setWork:
     handler: lambdas/endpoints/setWork.handler
     events:
       - http:
           method: POST
-          path: /termicadesignapi/set-work/         
+          path: /termicadesign-api/set-work/         
