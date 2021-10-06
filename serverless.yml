@@ -15,16 +15,28 @@ provider:
     - Effect: "Allow"
       Action:
         - dynamodb:*
-      Resource: '*'
+      Resource: '*'    
 
 custom:
-  tableName: TermicaDesignTable  
+  tableName: TermicaDesignTable
+  apiKeys:
+    - name: termicaDesign-ApiKey
+      usagePlan:
+        name: "termicaDesign-usagePlan"
+        description: "Description of first plan"
+        quota:
+          limit: 1000
+          period: MONTH
+        throttle:
+          burstLimit: 100
+          rateLimit: 20
 
 package:
   individually: true
 
 plugins:
   - serverless-webpack
+  - serverless-add-api-key
 
 functions:
   getWorks:
@@ -33,15 +45,18 @@ functions:
       - http:
           method: GET
           path: /termicadesign-api/get-works
+          private: true
   getWorkById:
     handler: lambdas/endpoints/getWorkById.handler
     events:
       - http:
           method: GET
           path: /termicadesign-api/get-work-by-id/{id} 
+          private: true
   setWork:
     handler: lambdas/endpoints/setWork.handler
     events:
       - http:
           method: POST
-          path: /termicadesign-api/set-work/         
+          path: /termicadesign-api/set-work
+          private: true        

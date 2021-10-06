@@ -8,7 +8,7 @@ const dynamoDB = new AWS.DynamoDB({
 });
 
 module.exports.handler = (event, context, cb) => {
-  const { id = "1" } = event;
+  const { id } = event.pathParameters;
 
   const params = {
     TableName: "TermicaDesignTable",
