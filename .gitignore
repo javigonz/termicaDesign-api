@@ -10,7 +10,7 @@
 
 # production
 /build
-.serverless
+/.serverless
 
 # misc
 .DS_Store
