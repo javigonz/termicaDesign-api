@@ -36,6 +36,7 @@ module.exports.handler = (event, context, cb) => {
         body: JSON.stringify(newItem),
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true,
         },
       };
 

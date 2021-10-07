@@ -54,10 +54,12 @@ functions:
           method: GET
           path: /termicadesign-api/get-work-by-id/{id} 
           private: true
+          cors: true
   setWork:
     handler: lambdas/endpoints/setWork.handler
     events:
       - http:
           method: POST
           path: /termicadesign-api/set-work
-          private: true        
+          private: true 
+          cors: true       
