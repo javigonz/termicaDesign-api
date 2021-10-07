@@ -6,7 +6,7 @@ API for TermicaDesign app
 
 Clone the project
 
-<code>git clone 
+<code>git clone https://github.com/javigonz/termicaDesign-api.git
 </code>
 
 Install dependencies (node v14.x is minimum requirement)
