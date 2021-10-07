@@ -2,6 +2,12 @@
 
 API for TermicaDesign app
 
+Project running with:
+
+- Nodejs
+- Static module bundler with Webpack
+- Deploy in AWS with Serverless Framework
+
 # Setup
 
 Clone the project
@@ -13,8 +19,6 @@ Install dependencies (node v14.x is minimum requirement)
 
 <code>npm install</code>
 
-# Run locally
+# Deploy in AWS
 
-
-# Deploy
-
+Serverless deploy in AWS in each commit to main branch
