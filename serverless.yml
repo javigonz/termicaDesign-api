@@ -46,6 +46,7 @@ functions:
           method: GET
           path: /termicadesign-api/get-works
           private: true
+          cors: true
   getWorkById:
     handler: lambdas/endpoints/getWorkById.handler
     events:

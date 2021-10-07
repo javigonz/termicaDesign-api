@@ -27,6 +27,7 @@ module.exports.handler = (event, context, cb) => {
         body: JSON.stringify(unmarshalledData),
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true,
         },
       };
 
