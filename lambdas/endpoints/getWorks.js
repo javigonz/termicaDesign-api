@@ -26,7 +26,7 @@ module.exports.handler = (event, context, cb) => {
         statusCode: 200,
         body: JSON.stringify(unmarshalledData),
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "https://www.termicadesign.com",
           "Access-Control-Allow-Credentials": true,
         },
       };

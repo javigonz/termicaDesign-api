@@ -46,16 +46,7 @@ functions:
           method: GET
           path: /termicadesign-api/get-works
           private: true
-          cors:
-            origin: '*'
-            headers:
-              - Content-Type
-              - X-Amz-Date
-              - Authorization
-              - X-Api-Key
-              - X-Amz-Security-Token
-              - X-Amz-User-Agent
-            allowCredentials: false
+          cors: true
   getWorkById:
     handler: lambdas/endpoints/getWorkById.handler
     events:
