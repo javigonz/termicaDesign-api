@@ -1,7 +1,5 @@
 "use strict";
 
-const middy = require("middy");
-const { cors } = require("middy/middlewares");
 const AWS = require("aws-sdk");
 
 const dynamoDB = new AWS.DynamoDB({
@@ -9,7 +7,7 @@ const dynamoDB = new AWS.DynamoDB({
   apiVersion: "2021-10-05",
 });
 
-const handlerGetWorks = (event, context, cb) => {
+module.exports.handler = (event, context, cb) => {
   const params = {
     TableName: "TermicaDesignTable",
   };
@@ -37,6 +35,3 @@ const handlerGetWorks = (event, context, cb) => {
     }
   });
 };
-
-const handler = middy(handlerGetWorks).use(cors());
-module.exports = { handler };

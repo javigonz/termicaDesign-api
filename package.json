@@ -8,7 +8,6 @@
   "main": "handler.js",
   "dependencies": {
     "aws-sdk": "^2.1001.0",
-    "middy": "^0.36.0",
     "serverless-webpack": "^5.5.4",
     "webpack": "^5.57.1"
   },
