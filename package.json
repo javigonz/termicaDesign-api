@@ -7,6 +7,7 @@
   "license": "ISC",
   "main": "handler.js",
   "dependencies": {
+    "@fontsource/la-belle-aurore": "^4.5.0",
     "aws-sdk": "^2.1001.0",
     "serverless-webpack": "^5.5.4",
     "webpack": "^5.57.1"
