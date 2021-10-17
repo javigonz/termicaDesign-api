@@ -15,6 +15,7 @@ provider:
     - Effect: "Allow"
       Action:
         - dynamodb:*
+        - ses:*
       Resource: '*'    
 
 custom:
@@ -62,4 +63,12 @@ functions:
           method: POST
           path: /termicadesign-api/set-work
           private: true 
-          cors: true   
+          cors: true  
+  sendEmail:
+    handler: lambdas/endpoints/sendEmail.handler
+    events:
+      - http:
+          path: /termicadesign-api/send-email
+          method: POST
+          private: true 
+          cors: true         
