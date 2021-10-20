@@ -1,24 +1,26 @@
 {
   "name": "termicadesignapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "API resources for TermicaDesign app",
   "keywords": [],
   "author": "Javier Gonzalez",
   "license": "ISC",
   "main": "handler.js",
   "dependencies": {
-    "@fontsource/la-belle-aurore": "^4.5.0",
     "aws-sdk": "^2.1001.0",
     "serverless-webpack": "^5.5.4",
     "webpack": "^5.57.1"
   },
   "devDependencies": {
-    "serverless-add-api-key": "^4.2.0"
+    "jest": "^27.3.1",
+    "serverless-add-api-key": "^4.2.0",
+    "serverless-domain-manager": "^5.1.5"
   },
   "scripts": {
     "invoke-getWorks": "sls invoke local -f getWorks",
     "invoke-getWorkById": "sls invoke local -f getWorkById",
     "invoke-setWork": "sls invoke local -f setWork",
-    "deploy": "sls deploy --stage prod --verbose"
+    "deploy": "sls deploy --stage prod --verbose",
+    "test:watch": "jest  --watch --verbose"
   }
 }

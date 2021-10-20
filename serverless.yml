@@ -1,4 +1,3 @@
-
 service: termicadesign-api
 frameworkVersion: '2'
 
@@ -31,6 +30,11 @@ custom:
         throttle:
           burstLimit: 100
           rateLimit: 20
+  customDomain:
+    domainName: api.termicadesign.com
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRourte53Record: true        
 
 package:
   individually: true
@@ -38,6 +42,7 @@ package:
 plugins:
   - serverless-webpack
   - serverless-add-api-key
+  - serverless-domain-manager
 
 functions:
   getWorks:
